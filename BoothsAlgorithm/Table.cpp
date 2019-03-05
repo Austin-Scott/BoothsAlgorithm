@@ -12,7 +12,7 @@ void Table::addRow(vector<string> values)
 
 void Table::clearTable()
 {
-	//TODO
+	values.clear();
 }
 
 string Table::getFormattedTable()

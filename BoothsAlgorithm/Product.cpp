@@ -7,14 +7,12 @@ Product::Product(int8_t multiplier)
 
 int16_t Product::getValue()
 {
-	//TODO
-	return int16_t();
+	return value;
 }
 
 bool Product::getLeastSignificantBit()
 {
-	//TODO
-	return false;
+	return leastSignificantBit;
 }
 
 int8_t Product::getLastTwoBits()
