@@ -1,8 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <cstdint>
-
 #include "Table.h"
 #include "toBinaryStrings.h"
 #include "Product.h"
@@ -11,9 +6,16 @@
 using namespace std;
 
 int main() {
+
+	//Creates a table with 4 columns
 	Table table(4);
-	while (true) {
+
+	char keepLooping = 'n';
+
+	do {
 		table.clearTable();
+
+		//8-bit signed integers for the multiplicand and the multiplier
 		int8_t multiplicand = 0;
 		int8_t multiplier = 0;
 
@@ -22,6 +24,8 @@ int main() {
 		cout << "Please enter your 8-bit multiplier: ";
 		multiplier = inputNumber();
 
+		//Creates a 16-bit product initialized with the value of multiplier.
+		//Afterwards, it adds an extra zero bit at the end.
 		Product product(multiplier);
 
 		table.addRow({ "Iteration", "Steps", "Multiplicand", "Product" });
@@ -50,11 +54,9 @@ int main() {
 			<< "\tDecimal: " << product.getValue() << endl
 			<< "\tBinary: " << toBinaryString(product.getValue()) << endl << endl;
 
-		char answer = 'n';
 		cout << "Would you like to enter new values? (y/n) ";
 		cin.clear();
-		cin >> answer;
-		if (answer != 'y')
-			break;
-	}
+		cin >> keepLooping;
+
+	} while (keepLooping == 'y');
 }

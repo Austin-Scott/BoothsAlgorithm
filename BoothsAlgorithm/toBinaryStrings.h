@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//Returns a string of the binary contents of value. 
 template<class T> string toBinaryString(T value) {
 	string result = "";
 	int numberOfBytes = sizeof(value);
