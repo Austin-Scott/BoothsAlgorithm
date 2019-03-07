@@ -4,7 +4,7 @@ Product::Product(int8_t multiplier)
 {
 	leastSignificantBit = 0;
 	value = 0;
-	value += multiplier;
+	value += ((int16_t)multiplier)&0x00FF;
 }
 
 int16_t Product::getValue()
@@ -29,5 +29,6 @@ void Product::add(int8_t multiplicand)
 
 void Product::arithmeticRightShift()
 {
-	
+	leastSignificantBit = (bool)(value & 1);
+	value = value >> 1;
 }
