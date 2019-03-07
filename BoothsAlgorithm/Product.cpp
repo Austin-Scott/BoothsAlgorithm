@@ -4,7 +4,7 @@ Product::Product(int8_t multiplier)
 {
 	leastSignificantBit = 0;
 	value = 0;
-	//TODO
+	value += multiplier;
 }
 
 int16_t Product::getValue()
@@ -19,16 +19,15 @@ bool Product::getLeastSignificantBit()
 
 int8_t Product::getLastTwoBits()
 {
-	//TODO
-	return int8_t();
+	return (int8_t)((value & 1) << 1) + (int8_t)leastSignificantBit;
 }
 
 void Product::add(int8_t multiplicand)
 {
-	//TODO
+	value += ((int16_t)multiplicand << 8);
 }
 
 void Product::arithmeticRightShift()
 {
-	//TODO
+	
 }

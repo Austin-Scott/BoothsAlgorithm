@@ -52,6 +52,7 @@ int main() {
 
 		char answer = 'n';
 		cout << "Would you like to enter new values? (y/n) ";
+		cin.clear();
 		cin >> answer;
 		if (answer != 'y')
 			break;
