@@ -6,6 +6,7 @@
 #include "Table.h"
 #include "toBinaryStrings.h"
 #include "Product.h"
+#include "inputNumber.h"
 
 using namespace std;
 
@@ -17,9 +18,9 @@ int main() {
 		int8_t multiplier = 0;
 
 		cout << "Please enter your 8-bit multiplicand: ";
-		cin >> multiplicand;
+		multiplicand = inputNumber();
 		cout << "Please enter your 8-bit multiplier: ";
-		cin >> multiplier;
+		multiplier = inputNumber();
 
 		Product product(multiplier);
 
@@ -44,7 +45,7 @@ int main() {
 			table.addRow({ to_string(i + 1), "Product asr 1", toBinaryString(multiplicand), toBinaryString(product) });
 		}
 
-		cout << table.getFormattedTable() << endl;
+		cout << endl << table.getFormattedTable() << endl;
 		cout << "Result:" << endl
 			<< "\tDecimal: " << product.getValue() << endl
 			<< "\tBinary: " << toBinaryString(product.getValue()) << endl << endl;

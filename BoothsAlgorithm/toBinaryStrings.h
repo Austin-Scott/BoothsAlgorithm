@@ -6,11 +6,20 @@
 using namespace std;
 
 template<class T> string toBinaryString(T value) {
-	//TODO
-	return "";
+	string result = "";
+	int numberOfBytes = sizeof(value);
+	for (int byteOffset = numberOfBytes - 1; byteOffset >= 0; byteOffset--) {
+		for (int bitOffset = 7; bitOffset >= 0; bitOffset--) {
+			T bitmask = (T)1<<(8*byteOffset+bitOffset);
+			if (value&bitmask) {
+				result.push_back('1');
+			}
+			else {
+				result.push_back('0');
+			}
+		}
+	}
+	return result;
 }
 
-string toBinaryString(Product value) {
-	//TODO
-	return "";
-}
+string toBinaryString(Product value);

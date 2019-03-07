@@ -115,11 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="inputNumber.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Product.cpp" />
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="toBinaryStrings.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="inputNumber.h" />
     <ClInclude Include="Product.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="toBinaryStrings.h" />

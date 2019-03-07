@@ -2,6 +2,8 @@
 
 Product::Product(int8_t multiplier)
 {
+	leastSignificantBit = 0;
+	value = 0;
 	//TODO
 }
 
